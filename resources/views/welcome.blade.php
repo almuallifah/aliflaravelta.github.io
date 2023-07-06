@@ -50,7 +50,6 @@
                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
                     Rekomendasi Nasi Boranan
                     </button>
-
                 </div>
             </div>
         </div>
@@ -221,18 +220,18 @@
                 </div>
                 <div class="form-check">
                     <label style="font-size: 18px!important;" class="col control-label font-weight-bold" for="form-field-1">
-                        Parkir
+                        Parkir 
                     </label>
                     <div class="col-sm-9">
                         <label class="radio-inline">
                             <input type="radio" class="square-black" value="tidak" name="parkir" <?php echo isset($_POST['parkir']) ? ($_POST['parkir'] == 'tidak' ? 'checked' : '') : ''; ?>
                                 required="">
-                            Tidak
+                            Tidak (tidak tersedia parkir untuk mobil)
                         </label>
                         <label class="radio-inline">
                             <input type="radio" class="square-black" value="ya" name="parkir"
                                 <?php echo isset($_POST['parkir']) ? ($_POST['parkir'] == 'ya' ? 'checked' : '') : ''; ?> required="">
-                            Ya
+                            Ya  (tersedia parkir untuk mobil)
                         </label>
                     </div>
                 </div>
@@ -259,41 +258,6 @@
                 </div>
 
                 </div>
-                @if (isset($penjual))
-                    <h2>Hasil Rekomendasi</h2>
-                    @if ($penjual->isEmpty());
-                        <p>P</p>
-                    @else
-                        <ul>
-                            @foreach ($penjual as $namaPenjual)
-                                <li>
-                                    <strong>Nama Penjual : </strong>{{ $namaPenjual }}
-                                </li>
-                            @endforeach
-                        </ul>
-                        <ul>
-                            @foreach ($alamat as $alamatPenjual)
-                                <li>
-                                    <strong>Alamat Penjual : </strong>{{ $alamatPenjual }}
-                                </li>
-                            @endforeach
-                        </ul>
-                        <ul>
-                            @foreach ($jamBuka as $jamBukaPenjual)
-                                <li>
-                                    <strong>Jam Buka : </strong> {{ $jamBukaPenjual }}
-                                </li>
-                            @endforeach
-                        </ul>
-                        <ul>
-                            @foreach ($jamTutup as $jamTutupPenjual)
-                                <li>
-                                    <strong>Jam Tutup : </strong>{{ $jamTutupPenjual }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                @endif
         </main>
       </div>
       <div class="modal-footer">
